@@ -7,90 +7,100 @@
 <title>Портфолио Кристины</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: досье кейсов — узкая колонка текста, широкие галереи; у каждого кейса шапка «период · контекст · цифры» */
+/* Layout: светлая витрина кейсов — каждый кейс большая скруглённая карточка, лаймовый маркер на главном, одна выделенная плашка с жёсткой тенью */
 :root{
-  --bg:#F2F5F4; --surface:#FFFFFF; --ink:#16201F; --muted:#56625F; --line:#D5DDDA;
-  --accent:#0D7468; --accent-soft:#DCEEEA;
-  --f-display:"Literata", Georgia, "Times New Roman", serif;
+  --bg:#F1F1F7; --surface:#FFFFFF; --inset:#F6F6FB; --ink:#141418; --muted:#5C5E6E; --line:#DEDEE8;
+  --lime:#DCF39A; --on-lime:#141418; --lav:#E3E3FB;
+  --accent:#141418; --accent-soft:#E3E3FB;
+  --f-display:"Geologica", "Segoe UI", system-ui, sans-serif;
   --f-body:"Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono:"JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0F1514; --surface:#172020; --ink:#E5EDEB; --muted:#94A3A0; --line:#2A3634;
-  --accent:#4FC3B3; --accent-soft:#16312D; color-scheme:dark } }
+  --bg:#111217; --surface:#1A1B22; --inset:#22232C; --ink:#ECECF3; --muted:#A3A5B6; --line:#2D2F3B;
+  --lime:#CDEB72; --on-lime:#141418; --lav:#2B2C4D; --accent:#ECECF3; --accent-soft:#2B2C4D; color-scheme:dark } }
 :root[data-theme="dark"]{
-  --bg:#0F1514; --surface:#172020; --ink:#E5EDEB; --muted:#94A3A0; --line:#2A3634;
-  --accent:#4FC3B3; --accent-soft:#16312D; color-scheme:dark }
+  --bg:#111217; --surface:#1A1B22; --inset:#22232C; --ink:#ECECF3; --muted:#A3A5B6; --line:#2D2F3B;
+  --lime:#CDEB72; --on-lime:#141418; --lav:#2B2C4D; --accent:#ECECF3; --accent-soft:#2B2C4D; color-scheme:dark }
 
 *{box-sizing:border-box}
 body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6;
-  padding-inline:20px; padding-block:0 64px}
-.wrap{max-width:1040px; margin:0 auto}
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:0 64px}
+.wrap{max-width:1080px; margin:0 auto; display:grid; gap:20px}
 .text{max-width:66ch}
-a{color:var(--accent); text-underline-offset:3px}
-a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
-h1,h2,h3{font-family:var(--f-display); font-weight:650; line-height:1.15; text-wrap:balance; margin:0}
-h1{font-size:clamp(2.2rem,5vw,3.4rem); letter-spacing:-.01em}
-h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
-h3{font-size:1.15rem; font-family:var(--f-body); font-weight:600}
+a{color:inherit; text-decoration-color:var(--lime); text-decoration-thickness:3px; text-underline-offset:4px}
+a:hover{background:var(--lime); color:var(--on-lime)}
+a:focus-visible{outline:2px solid var(--ink); outline-offset:3px; border-radius:4px}
+h1,h2,h3{font-family:var(--f-display); font-weight:600; line-height:1.12; text-wrap:balance; margin:0; letter-spacing:-.015em}
+h1{font-size:clamp(2.6rem,7vw,4.6rem)}
+h2{font-size:clamp(1.5rem,3.2vw,2.15rem)}
+h3{font-size:1.1rem; letter-spacing:0}
 p{margin:0}
-.label{font-family:var(--f-mono); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+mark{background:var(--lime); color:var(--on-lime); padding:0 .12em; border-radius:8px}
+.label{font-family:var(--f-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
 
-header.top{padding-block:56px 40px; border-bottom:1px solid var(--line); display:grid; gap:18px}
-.role{font-size:1.15rem; color:var(--muted); max-width:56ch}
-.contacts{display:flex; flex-wrap:wrap; gap:8px 20px; font-family:var(--f-mono); font-size:.85rem}
-nav.toc{display:flex; flex-wrap:wrap; gap:8px; padding-block:20px}
-nav.toc a{font-size:.9rem; text-decoration:none; padding:6px 12px; border:1px solid var(--line); border-radius:999px; color:var(--ink)}
-nav.toc a:hover{border-color:var(--accent); color:var(--accent)}
+header.top{position:relative; padding-block:56px 28px; display:grid; gap:18px; overflow:hidden}
+header.top > *{position:relative; z-index:1}
+header.top > .swirl{position:absolute; right:-10px; top:16px; width:min(46%,420px); height:auto; z-index:0; color:var(--muted); opacity:.5; pointer-events:none}
+.role{font-size:1.15rem; color:var(--muted); max-width:52ch}
+.contacts{display:flex; flex-wrap:wrap; gap:8px 10px; font-family:var(--f-mono); font-size:.82rem}
+.contacts span{padding:6px 12px; border-radius:999px; background:var(--surface); border:1px solid var(--line)}
+.contacts span.hi{background:var(--lime); color:var(--on-lime); border-color:var(--lime)}
 
-section.case{padding-block:56px; border-bottom:1px solid var(--line); display:grid; gap:28px}
+nav.toc{display:flex; flex-wrap:wrap; gap:8px; padding-block:4px 8px}
+nav.toc a{font-size:.88rem; text-decoration:none; padding:7px 14px; border:1.5px solid var(--ink); border-radius:999px; color:var(--ink)}
+nav.toc a:hover{background:var(--lime); color:var(--on-lime)}
+
+section.case{background:var(--surface); border:1px solid var(--line); border-radius:32px; padding:clamp(22px,4.5vw,44px); display:grid; gap:28px; min-width:0}
 .case-head{display:grid; gap:12px}
-.meta{font-family:var(--f-mono); font-size:.85rem; color:var(--muted)}
-.lead{font-size:1.08rem}
+.meta{font-family:var(--f-mono); font-size:.8rem; color:var(--muted); justify-self:start; background:var(--inset); padding:5px 12px; border-radius:999px}
+.lead{font-size:1.06rem}
 
-.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--line);
-  border:1px solid var(--line); border-radius:10px; overflow:hidden}
-.fact{background:var(--surface); padding:16px 18px; display:grid; gap:2px}
-.fact b{font-family:var(--f-mono); font-weight:500; font-size:1.6rem; font-variant-numeric:tabular-nums; color:var(--accent)}
+.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; padding:0 8px 8px 0}
+.fact{background:var(--inset); border:1px solid var(--line); border-radius:22px; padding:18px 20px; display:grid; gap:4px; align-content:start}
+.fact:first-child{background:var(--lime); color:var(--on-lime); border:1.5px solid var(--ink); box-shadow:6px 6px 0 var(--ink)}
+.fact b{font-family:var(--f-display); font-weight:600; font-size:clamp(1.8rem,4vw,2.4rem); line-height:1.05; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
 .fact span{font-size:.88rem; color:var(--muted)}
+.fact:first-child span{color:var(--on-lime); opacity:.75}
 
 .timeline{display:grid; gap:28px}
 .phase{display:grid; gap:14px}
-.phase > .label{color:var(--accent)}
-.months{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px}
-.month{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; display:grid; gap:10px; align-content:start; min-width:0}
-.month h3{font-family:var(--f-mono); font-weight:500; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.phase > .label{color:var(--ink)}
+.months{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
+.month{background:var(--inset); border-radius:22px; padding:18px 20px; display:grid; gap:10px; align-content:start; min-width:0}
+.month h3{font-family:var(--f-mono); font-weight:500; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
 .month ul{margin:0; padding-left:1.1em; display:grid; gap:6px}
-.month li::marker{color:var(--accent)}
-.hire{font-family:var(--f-mono); font-size:.8rem; color:var(--accent); white-space:nowrap}
+.month li::marker, .list li::marker{color:var(--muted)}
+.hire{font-family:var(--f-mono); font-size:.75rem; white-space:nowrap; background:var(--lav); padding:1px 8px; border-radius:999px}
 .note{font-size:.9rem; color:var(--muted)}
 
 .gallery{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .gallery.wide{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 .gallery.phones{grid-template-columns:repeat(auto-fit,minmax(180px,240px))}
 figure{margin:0; display:grid; gap:8px; min-width:0}
-figure img{display:block; width:100%; height:auto; border-radius:8px; border:1px solid var(--line); background:var(--surface)}
+figure img{display:block; width:100%; max-width:100%; height:auto; border-radius:18px; border:1px solid var(--line); background:var(--inset)}
 figcaption{font-size:.85rem; color:var(--muted)}
+figure.scheme img{border-radius:24px}
 
 .cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px}
+.cols > *{min-width:0}
 .list{margin:0; padding-left:1.1em; display:grid; gap:8px}
-.list li::marker{color:var(--accent)}
 
-.agents{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px}
-.agent{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; display:grid; gap:6px; align-content:start}
-.agent .label{color:var(--accent)}
+.agents{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px}
+.agent{background:var(--inset); border-radius:22px; padding:18px 20px; display:grid; gap:6px; align-content:start}
+.agent .label{color:var(--ink)}
 
-blockquote{margin:0; padding:16px 20px; border-left:3px solid var(--accent); background:var(--accent-soft); border-radius:0 8px 8px 0}
-blockquote p{font-family:var(--f-display); font-size:1.08rem}
-blockquote cite{display:block; margin-top:6px; font-style:normal; font-size:.85rem; color:var(--muted)}
+blockquote{margin:0; padding:20px 24px; background:var(--lav); border-radius:22px}
+blockquote p{font-family:var(--f-display); font-size:1.1rem}
+blockquote cite{display:block; margin-top:8px; font-style:normal; font-size:.85rem; color:var(--muted)}
 
-.btn{display:inline-block; padding:10px 16px; border-radius:8px; background:var(--accent); color:var(--bg); text-decoration:none; font-weight:600}
-.btn:hover{filter:brightness(1.08)}
-.pending{display:inline-block; font-family:var(--f-mono); font-size:.8rem; padding:4px 10px; border:1px dashed var(--line); border-radius:6px; color:var(--muted)}
+.btn{display:inline-block; padding:11px 20px; border-radius:999px; background:var(--lime); color:var(--on-lime); border:1.5px solid var(--ink); text-decoration:none; font-weight:600}
+.btn:hover{background:var(--lime); box-shadow:4px 4px 0 var(--ink)}
+.pending{display:inline-block; font-family:var(--f-mono); font-size:.8rem; padding:4px 10px; border:1px dashed var(--line); border-radius:999px; color:var(--muted)}
 
-footer{padding-block:40px; display:grid; gap:10px}
+footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
 </head>
@@ -98,12 +108,13 @@ footer{padding-block:40px; display:grid; gap:10px}
 
 <div class="wrap">
   <header class="top">
+    <svg class="swirl" viewBox="0 0 420 260" fill="none" aria-hidden="true"><path d="M10 40 C 120 10, 210 60, 190 120 C 175 165, 110 170, 105 130 C 100 90, 170 80, 230 110 C 300 145, 330 200, 410 240" stroke="currentColor" stroke-width="2" stroke-dasharray="7 7" stroke-linecap="round"/></svg>
     <span class="label">Портфолио · 2023 — 2026</span>
-    <h1>Кристина</h1>
+    <h1><mark>Кристина</mark> Павлова</h1>
     <p class="role">Бизнес-ассистент руководителя, 3,5 года опыта. Аналитика, подрядчики, запуск продуктов, подбор людей, ИИ-агенты и вайбкодинг.</p>
     <div class="contacts">
       <span>Анталья, UTC+3 · удалённо</span>
-      <span>Telegram: @KristinaStb</span>
+      <span class="hi">Telegram: @KristinaStb</span>
     </div>
   </header>
 
@@ -112,6 +123,7 @@ footer{padding-block:40px; display:grid; gap:10px}
     <a href="#landing">Лендинг и бот</a>
     <a href="#renovation">Ремонт под сдачу</a>
     <a href="#agents">ИИ-агенты и дашборды</a>
+    <a href="#office">Офис ИИ-специалистов</a>
     <a href="#market">Подрядчики и рынок</a>
     <a href="#naviduu">Студия NAVIDUU</a>
     <a href="#video">Монтаж</a>
@@ -340,6 +352,17 @@ footer{padding-block:40px; display:grid; gap:10px}
     </div>
   </section>
 
+  <!-- КЕЙС: ОФИС ИИ-СПЕЦИАЛИСТОВ -->
+  <section class="case" id="office">
+    <div class="case-head">
+      <span class="meta">Сентябрь 2026 · проект следующего шага после парка агентов</span>
+      <h2>Офис ИИ-специалистов: 9 ролей и порядок запуска</h2>
+      <p class="lead text">Спроектировала, как дособрать парк агентов в команду под весь бизнес: у каждого направления своя роль, общая база данных, правила работы и запуск по этапам.</p>
+    </div>
+
+    <figure class="scheme"><img src="img/office.webp" alt="Схема офиса ИИ-специалистов: ассистент в центре, девять ролей агентов по этапам запуска, общая база, правила офиса и отделённые личные агенты" loading="lazy"><figcaption>Схему и роли нарисовала сама</figcaption></figure>
+  </section>
+
   <!-- КЕЙС: ПОДРЯДЧИКИ И РЫНОК -->
   <section class="case" id="market">
     <div class="case-head">
@@ -441,7 +464,7 @@ footer{padding-block:40px; display:grid; gap:10px}
 
   <footer>
     <span class="label">Связаться</span>
-    <p>Telegram: @KristinaStb</p>
+    <p><a class="btn" href="https://t.me/KristinaStb" target="_blank" rel="noopener">Написать в Telegram</a></p>
   </footer>
 </div>
 </body>
