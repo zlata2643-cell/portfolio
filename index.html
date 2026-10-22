@@ -120,6 +120,8 @@ blockquote cite{display:block; margin-top:8px; font-style:normal; font-size:.85r
 .review-video{aspect-ratio:9/16; background:var(--ink)}
 .review-cover{height:auto; border:1px solid var(--line)}
 .review-who{grid-column:2; grid-row:1; display:grid; gap:6px; align-content:start; min-width:0}
+.review-center{align-content:center}
+.who-middle{align-self:center}
 .review-body{grid-column:1 / -1; display:grid; gap:10px; min-width:0}
 .review-body blockquote{padding:12px 16px; border-radius:16px; background:var(--surface)}
 .review-body blockquote p{font-size:1rem}
@@ -164,6 +166,20 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
     </div>
     <div class="reviews">
       <div class="review">
+        <video class="review-media review-video" controls preload="metadata" playsinline poster="media/review-naviduu-poster.jpg">
+          <source src="media/review-naviduu.mp4" type="video/mp4">
+        </video>
+        <div class="review-who who-middle">
+          <h3>Михаил Салаев, основатель студии NAVIDUU</h3>
+          <p class="note">Работали вместе с 2023 по 2025 год</p>
+        </div>
+        <div class="review-body">
+          <blockquote><p>«Она, собственно, моя правая рука… такой мастер вообще на все руки».</p></blockquote>
+          <blockquote><p>«Все процессы она теперь знает у нас… можно на неё реально положиться».</p></blockquote>
+          <blockquote><p>«И с SMM, и с различными бизнес-процессами, с организационными моментами… навыков сейчас прям очень-очень много. Рекомендую».</p></blockquote>
+        </div>
+      </div>
+      <div class="review review-center">
         <img class="review-media review-cover" src="img/land-hero.webp" alt="Первый экран лендинга «Персональная архитектура капитала» с фото Екатерины Карпекиной" width="1573" height="819">
         <div class="review-who">
           <h3>Екатерина Карпекина, частный инвестор</h3>
@@ -174,20 +190,6 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
           <blockquote><p>«Умеет работать в режиме многозадачности».</p></blockquote>
           <blockquote><p>«Находила нужных людей, проводила первые собеседования».</p></blockquote>
           <blockquote><p>«Пунктуальная, ответственная, инициативная, включённая в процесс, предлагает решения, участвует в оптимизации процессов».</p></blockquote>
-        </div>
-      </div>
-      <div class="review">
-        <video class="review-media review-video" controls preload="metadata" playsinline poster="media/review-naviduu-poster.jpg">
-          <source src="media/review-naviduu.mp4" type="video/mp4">
-        </video>
-        <div class="review-who">
-          <h3>Михаил Салаев, основатель студии NAVIDUU</h3>
-          <p class="note">Работали вместе с 2023 по 2025 год</p>
-        </div>
-        <div class="review-body">
-          <blockquote><p>«Она, собственно, моя правая рука… такой мастер вообще на все руки».</p></blockquote>
-          <blockquote><p>«Все процессы она теперь знает у нас… можно на неё реально положиться».</p></blockquote>
-          <blockquote><p>«И с SMM, и с различными бизнес-процессами, с организационными моментами… навыков сейчас прям очень-очень много. Рекомендую».</p></blockquote>
         </div>
       </div>
     </div>
