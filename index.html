@@ -82,6 +82,7 @@ section.case{background:var(--surface); border:1px solid var(--line); border-rad
 
 .gallery{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .gallery.wide{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.landing-shots > figure:first-child{grid-column:1 / -1}
 .gallery.phones{grid-template-columns:repeat(auto-fit,minmax(180px,240px))}
 figure{margin:0; display:grid; gap:8px; min-width:0}
 figure img{display:block; width:100%; max-width:100%; height:auto; border-radius:18px; border:1px solid var(--line); background:var(--inset)}
@@ -299,11 +300,14 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
       </div>
     </div>
 
-    <div class="gallery wide">
-      <figure><img src="img/land-hero.webp" alt="Первый экран лендинга «Персональная архитектура капитала»" loading="lazy"><figcaption>Первый экран</figcaption></figure>
-      <figure><img src="img/land-structure.png" alt="Блок «Разберём вашу ситуацию» с примером структуры капитала" loading="lazy"><figcaption>Что получит человек на встрече</figcaption></figure>
-      <figure><img src="img/land-steps.png" alt="Блок «Три шага»" loading="lazy"><figcaption>Три шага до записи</figcaption></figure>
-      <figure><img src="img/land-form.png" alt="Форма заявки с двумя раздельными согласиями" loading="lazy"><figcaption>Форма с раздельными согласиями</figcaption></figure>
+    <div class="gallery wide landing-shots">
+      <figure><img src="img/keit-01.webp" alt="Первый экран лендинга «Персональная архитектура капитала»" loading="lazy"><figcaption>Первый экран</figcaption></figure>
+      <figure><img src="img/keit-02.webp" alt="Блок «Для тех, у кого капитал уже есть»" loading="lazy"><figcaption>Для кого</figcaption></figure>
+      <figure><img src="img/keit-03.webp" alt="Блок «Разберём вашу ситуацию» с примером структуры капитала" loading="lazy"><figcaption>Что получит человек на встрече</figcaption></figure>
+      <figure><img src="img/keit-04.webp" alt="Блок «Три шага»" loading="lazy"><figcaption>Три шага до записи</figcaption></figure>
+      <figure><img src="img/keit-05.webp" alt="Блок о том, кто проводит разбор" loading="lazy"><figcaption>Кто проводит разбор</figcaption></figure>
+      <figure><img src="img/keit-06.webp" alt="Форма заявки с двумя раздельными согласиями" loading="lazy"><figcaption>Форма с раздельными согласиями</figcaption></figure>
+      <figure><img src="img/keit-07.webp" alt="Блок частых вопросов" loading="lazy"><figcaption>Частые вопросы</figcaption></figure>
     </div>
   </section>
 
