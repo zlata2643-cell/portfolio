@@ -91,6 +91,9 @@ figure.scheme img{border-radius:24px}
 
 .cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px}
 .cols > *{min-width:0}
+.sub{display:grid; gap:14px; align-content:start; background:var(--inset); border-radius:24px; padding:20px}
+.sub .fact{background:var(--surface)}
+.sub .fact:first-child{background:var(--lime)}
 .cols.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))}
 .list{margin:0; padding-left:1.1em; display:grid; gap:8px}
 
@@ -421,12 +424,26 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
     <div class="case-head">
       <span class="meta">Ноябрь 2025 — октябрь 2026 · все проекты инвестора</span>
       <h2>Подрядчики и анализ рынка за год</h2>
-      <p class="lead text">Искала исполнителей под все направления: маркетологи, продюсеры запусков, продюсеры книг, интеграторы CRM, эксперты по зарубежному найму, ремонт (сантехника, электрика, стяжка). Сама вела переписку и созвоны, сравнивала предложения, после старта держала связь и проверяла работу. По разбору конкурентов собрала стратегию запуска личного бренда руководителя.</p>
     </div>
-    <div class="facts">
-      <div class="fact"><b>~100</b><span>подрядчиков прошли через отбор</span></div>
-      <div class="fact"><b>15</b><span>из них начали работать с нами</span></div>
-      <div class="fact"><b>~100</b><span>конкурентов разобрано, на их основе стратегия запуска</span></div>
+
+    <div class="cols two">
+      <div class="sub">
+        <span class="label">Подрядчики</span>
+        <div class="facts">
+          <div class="fact"><b>~100</b><span>подрядчиков прошли через отбор</span></div>
+          <div class="fact"><b>15</b><span>из них начали работать с нами</span></div>
+        </div>
+        <p>Искала исполнителей под все направления: маркетологи, продюсеры запусков, продюсеры книг, интеграторы CRM, эксперты по зарубежному найму, ремонт (сантехника, электрика, стяжка).</p>
+        <p class="note">Сама вела переписку и созвоны, сравнивала предложения, после старта держала связь и проверяла работу.</p>
+      </div>
+      <div class="sub">
+        <span class="label">Конкуренты</span>
+        <div class="facts">
+          <div class="fact"><b>~100</b><span>конкурентов разобрано</span></div>
+        </div>
+        <p>Разобрала механики, путь клиента и стратегии запуска у конкурентов в Telegram и Instagram.</p>
+        <p class="note">По итогам собрала стратегию запуска личного бренда руководителя: позиционирование, входной продукт, воронка, путь клиента.</p>
+      </div>
     </div>
   </section>
 
