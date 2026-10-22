@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Портфолио Кристины</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: досье кейсов — узкая колонка текста, широкие галереи; у каждого кейса шапка «период · контекст · цифры» */
+:root{
+  --bg:#F2F5F4; --surface:#FFFFFF; --ink:#16201F; --muted:#56625F; --line:#D5DDDA;
+  --accent:#0D7468; --accent-soft:#DCEEEA;
+  --f-display:"Literata", Georgia, "Times New Roman", serif;
+  --f-body:"Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F1514; --surface:#172020; --ink:#E5EDEB; --muted:#94A3A0; --line:#2A3634;
+  --accent:#4FC3B3; --accent-soft:#16312D; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0F1514; --surface:#172020; --ink:#E5EDEB; --muted:#94A3A0; --line:#2A3634;
+  --accent:#4FC3B3; --accent-soft:#16312D; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6;
+  padding-inline:20px; padding-block:0 64px}
+.wrap{max-width:1040px; margin:0 auto}
+.text{max-width:66ch}
+a{color:var(--accent); text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+h1,h2,h3{font-family:var(--f-display); font-weight:650; line-height:1.15; text-wrap:balance; margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.4rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+h3{font-size:1.15rem; font-family:var(--f-body); font-weight:600}
+p{margin:0}
+.label{font-family:var(--f-mono); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+
+header.top{padding-block:56px 40px; border-bottom:1px solid var(--line); display:grid; gap:18px}
+.role{font-size:1.15rem; color:var(--muted); max-width:56ch}
+.contacts{display:flex; flex-wrap:wrap; gap:8px 20px; font-family:var(--f-mono); font-size:.85rem}
+nav.toc{display:flex; flex-wrap:wrap; gap:8px; padding-block:20px}
+nav.toc a{font-size:.9rem; text-decoration:none; padding:6px 12px; border:1px solid var(--line); border-radius:999px; color:var(--ink)}
+nav.toc a:hover{border-color:var(--accent); color:var(--accent)}
+
+section.case{padding-block:56px; border-bottom:1px solid var(--line); display:grid; gap:28px}
+.case-head{display:grid; gap:12px}
+.meta{font-family:var(--f-mono); font-size:.85rem; color:var(--muted)}
+.lead{font-size:1.08rem}
+
+.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.fact{background:var(--surface); padding:16px 18px; display:grid; gap:2px}
+.fact b{font-family:var(--f-mono); font-weight:500; font-size:1.6rem; font-variant-numeric:tabular-nums; color:var(--accent)}
+.fact span{font-size:.88rem; color:var(--muted)}
+
+.timeline{display:grid; gap:28px}
+.phase{display:grid; gap:14px}
+.phase > .label{color:var(--accent)}
+.months{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px}
+.month{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; display:grid; gap:10px; align-content:start; min-width:0}
+.month h3{font-family:var(--f-mono); font-weight:500; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.month ul{margin:0; padding-left:1.1em; display:grid; gap:6px}
+.month li::marker{color:var(--accent)}
+.hire{font-family:var(--f-mono); font-size:.8rem; color:var(--accent); white-space:nowrap}
+.note{font-size:.9rem; color:var(--muted)}
+
+.gallery{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.gallery.wide{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.gallery.phones{grid-template-columns:repeat(auto-fit,minmax(180px,240px))}
+figure{margin:0; display:grid; gap:8px; min-width:0}
+figure img{display:block; width:100%; height:auto; border-radius:8px; border:1px solid var(--line); background:var(--surface)}
+figcaption{font-size:.85rem; color:var(--muted)}
+
+.cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px}
+.list{margin:0; padding-left:1.1em; display:grid; gap:8px}
+.list li::marker{color:var(--accent)}
+
+.agents{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px}
+.agent{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; display:grid; gap:6px; align-content:start}
+.agent .label{color:var(--accent)}
+
+blockquote{margin:0; padding:16px 20px; border-left:3px solid var(--accent); background:var(--accent-soft); border-radius:0 8px 8px 0}
+blockquote p{font-family:var(--f-display); font-size:1.08rem}
+blockquote cite{display:block; margin-top:6px; font-style:normal; font-size:.85rem; color:var(--muted)}
+
+.btn{display:inline-block; padding:10px 16px; border-radius:8px; background:var(--accent); color:var(--bg); text-decoration:none; font-weight:600}
+.btn:hover{filter:brightness(1.08)}
+.pending{display:inline-block; font-family:var(--f-mono); font-size:.8rem; padding:4px 10px; border:1px dashed var(--line); border-radius:6px; color:var(--muted)}
+
+footer{padding-block:40px; display:grid; gap:10px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span class="label">Портфолио · 2023 — 2026</span>
+    <h1>Кристина</h1>
+    <p class="role">Бизнес-ассистент руководителя, 3,5 года опыта. Аналитика, подрядчики, запуск продуктов, подбор людей, ИИ-агенты и вайбкодинг.</p>
+    <div class="contacts">
+      <span>Анталья, UTC+3 · удалённо</span>
+      <span>Telegram: @KristinaStb</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Кейсы">
+    <a href="#nextsim">Медтех-стартап NextSim</a>
+    <a href="#landing">Лендинг и бот</a>
+    <a href="#renovation">Ремонт под сдачу</a>
+    <a href="#agents">ИИ-агенты и дашборды</a>
+    <a href="#market">Подрядчики и рынок</a>
+    <a href="#naviduu">Студия NAVIDUU</a>
+    <a href="#video">Монтаж</a>
+  </nav>
+
+  <!-- КЕЙС 1 -->
+  <section class="case" id="nextsim">
+    <div class="case-head">
+      <span class="meta">Ноябрь 2025 — февраль 2026 · медицинские симуляторы для обучения медиков · выход на рынок США</span>
+      <h2>NextSim: аналитика, подрядчики и упаковка продукта</h2>
+      <p class="lead text">Вела проект с первого дня: разобрала рынок и конкурентов, нашла и отобрала подрядчиков, подготовила техзадания и визуальную упаковку продуктовой линейки. Все работы делала сама, ИИ помогал с поиском и оформлением.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><b>40</b><span>онлайн-встреч с кандидатами и подрядчиками</span></div>
+      <div class="fact"><b>102 ч</b><span>на отбор подрядчиков и выбор CRM-платформы</span></div>
+      <div class="fact"><b>4</b><span>сравнительные таблицы продуктов с конкурентами</span></div>
+      <div class="fact"><b>50</b><span>штатов США в базе симуляционных центров</span></div>
+    </div>
+
+    <div class="timeline">
+      <div class="phase">
+        <span class="label">Этап 1 · аналитика и стратегическое планирование</span>
+        <div class="months">
+          <div class="month">
+            <h3>Ноябрь</h3>
+            <ul>
+              <li>Спецификация продукта конкурента</li>
+              <li>Отбор сайтов конкурентов для анализа</li>
+              <li>Анализ продуктовой линейки основных конкурентов</li>
+              <li>Список агрегаторов целевой аудитории</li>
+              <li>Шаблон техзадания на разработку и поставку медицинского симулятора</li>
+              <li>Список метрик и отчётов для будущей CRM</li>
+              <li>Специалист по международному рекрутингу <span class="hire">1 встреча · 2 ч</span></li>
+            </ul>
+          </div>
+          <div class="month">
+            <h3>Декабрь</h3>
+            <ul>
+              <li>Сравнительные таблицы с конкурентами: сестринское дело, Brayden, Nova и Nova Man, Nova Vita</li>
+              <li>Исследование работы с жидкостями в симуляторах для сестринского дела</li>
+              <li>Мотивация отдела продаж: полевые продавцы, контакт-центр, РОП</li>
+              <li>Планы интервью с сотрудниками конкурентов, дистрибьюторами, смежными поставщиками</li>
+              <li>План встреч с клиентами и вопросы для оценки их потенциала</li>
+              <li>Маркетолог <span class="hire">11 встреч · 25 ч</span></li>
+              <li>Методолог образовательной части <span class="hire">3 встречи · 5 ч</span></li>
+              <li>Выбор платформы для CRM <span class="hire">10 ч</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="phase">
+        <span class="label">Этап 2 · проектирование CRM и сайта, упаковка продукта</span>
+        <div class="months">
+          <div class="month">
+            <h3>Январь</h3>
+            <ul>
+              <li>Интегратор для внедрения CRM <span class="hire">20 встреч · 50 ч</span></li>
+              <li>Подрядчик по сайту <span class="hire">5 встреч · 10 ч</span></li>
+              <li>База симуляционных центров по 50 штатам США, на русском и английском</li>
+              <li>Визуальная концепция: визуальный ряд продуктов «Подросток» и «Младенец», доработка Nova и «Аускультации», симуляторы в фирменной одежде</li>
+            </ul>
+          </div>
+          <div class="month">
+            <h3>Февраль</h3>
+            <ul>
+              <li>Презентация для инвесторов</li>
+              <li>Техзадание на внедрение CRM-системы</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="note">Документы по каждому пункту могу показать на встрече.</p>
+    </div>
+
+    <div class="case-head">
+      <h3>Продуктовая линейка в презентации</h3>
+      <p class="text note">Визуальный ряд симуляторов сгенерировала с помощью ИИ. Фон, минималистичный логотип, стиль презентации и слоган тоже мои: слоган выбрали из нескольких моих вариантов.</p>
+    </div>
+    <div class="gallery wide">
+      <figure><img src="img/nova.webp" alt="Слайд: продуктовая линейка Nova, симулятор пациента в фирменной пижаме" loading="lazy"><figcaption>Nova — полноразмерный симулятор пациента</figcaption></figure>
+      <figure><img src="img/nova-man.webp" alt="Слайд: продуктовая линейка Nova Man" loading="lazy"><figcaption>Nova Man</figcaption></figure>
+      <figure><img src="img/nova-vita.webp" alt="Слайд: продуктовая линейка Nova Vita, детский симулятор" loading="lazy"><figcaption>Nova Vita</figcaption></figure>
+      <figure><img src="img/baby.webp" alt="Слайд: симулятор новорождённого" loading="lazy"><figcaption>Симулятор новорождённого</figcaption></figure>
+      <figure><img src="img/brayden.webp" alt="Слайд: тренажёр Brayden для сердечно-лёгочной реанимации" loading="lazy"><figcaption>Brayden — тренажёр для реанимации</figcaption></figure>
+      <figure><img src="img/slogan.webp" alt="Финальный слайд с логотипом NextSim и слоганом" loading="lazy"><figcaption>Логотип и слоган</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- КЕЙС 2 -->
+  <section class="case" id="landing">
+    <div class="case-head">
+      <span class="meta">Сентябрь — октябрь 2026 · личный бренд частного инвестора</span>
+      <h2>Лендинг с формой заявки и Telegram-ботом</h2>
+      <p class="lead text">Собрала сама с нуля через вайбкодинг: лендинг с формой записи на разбор и Telegram-бота с опросом, который записывает клиента автоматически. Визуальный стиль вырастила из найденного референса — кристаллы в воде в голубо-бело-серебристой гамме. По нему сделала бренд-бук: знак-монограмма, палитра, фоны, макеты для бота и форм, всё сгенерировала сама. Лендинг собран в этом стиле. Композицию и фото готовила сама, сделала версии для компьютера и телефона.</p>
+      <p><a class="btn" href="https://keit.capital/" target="_blank" rel="noopener">Открыть сайт keit.capital</a></p>
+    </div>
+
+    <div class="cols">
+      <div class="text">
+        <span class="label">Что сделала</span>
+        <ul class="list">
+          <li>Структура: первый экран, для кого, что разберём, три шага, кто проводит, форма, частые вопросы</li>
+          <li>Тексты вместе с руководителем, правки по её словам</li>
+          <li>Форма по 152-ФЗ: два раздельных согласия, данные хранятся в России</li>
+          <li>Связка «форма — бот — CRM»: заявка попадает в CRM задачей с ответами клиента</li>
+        </ul>
+      </div>
+      <div class="text">
+        <span class="label">Как проверяла</span>
+        <ul class="list">
+          <li>Нарисовала путь клиента в боте от «Старта» до записи на разбор: майнд-карта, около 5 часов работы</li>
+          <li>Тексты бота утвердила с руководителем по шагам</li>
+          <li>Провела тест пути клиента на реальных людях: QR-код, лендинг, бот, запись на встречу</li>
+          <li>Нашла место, где люди уходили, и убрала этот шаг из бота</li>
+          <li>Написала регламент для менеджера: когда писать человеку и что отмечать в CRM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery wide">
+      <figure><img src="img/land-hero.webp" alt="Первый экран лендинга «Персональная архитектура капитала»" loading="lazy"><figcaption>Первый экран</figcaption></figure>
+      <figure><img src="img/land-structure.png" alt="Блок «Разберём вашу ситуацию» с примером структуры капитала" loading="lazy"><figcaption>Что получит человек на встрече</figcaption></figure>
+      <figure><img src="img/land-steps.png" alt="Блок «Три шага»" loading="lazy"><figcaption>Три шага до записи</figcaption></figure>
+      <figure><img src="img/land-form.png" alt="Форма заявки с двумя раздельными согласиями" loading="lazy"><figcaption>Форма с раздельными согласиями</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- КЕЙС: РЕМОНТ -->
+  <section class="case" id="renovation">
+    <div class="case-head">
+      <span class="meta">Март — июль 2026 · студия под сдачу в аренду · инвестиции в недвижимость</span>
+      <h2>Ремонт под сдачу: учёт, подрядчики и разбор после сдачи</h2>
+      <p class="lead text">Вела учёт и план ремонта от первых закупок до сдачи объекта. После сдачи разобрала расходы и вывела правила для следующих объектов.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><b>2,15 млн ₽</b><span>итог при смете 2,5 млн ₽</span></div>
+      <div class="fact"><b>365+</b><span>позиций по чекам, разложенных по 10 категориям</span></div>
+      <div class="fact"><b>6</b><span>правил для следующих объектов по итогам разбора</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="text">
+        <span class="label">Что делала</span>
+        <ul class="list">
+          <li>Учёт расходов по чекам с разбивкой по категориям и возвратами</li>
+          <li>Дорожная карта работ и ежедневный план</li>
+          <li>Подбор подрядчиков по своим ТЗ и сравнительным таблицам: стяжка, сантехника, электрика, клининг</li>
+          <li>Когда мастер отказался в последний момент, нашла замену без срыва сроков</li>
+          <li>Оценила бюджет второго объекта по фактическим расходам первого</li>
+        </ul>
+      </div>
+      <div class="text">
+        <span class="label">Правила после разбора</span>
+        <ul class="list">
+          <li>Поэтапная оплата подрядчикам</li>
+          <li>Спецификация до закупки</li>
+          <li>Сверка цен перед заказом</li>
+          <li>Отдельный контроль крупных заказов мебели</li>
+          <li>Журнал работ до последнего дня</li>
+          <li>Деньги на оплаты готовятся к пятнице</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- КЕЙС 3 -->
+  <section class="case" id="agents">
+    <div class="case-head">
+      <span class="meta">Июнь — октябрь 2026 · курс по ИИ-агентам и вайбкодингу, защита проекта в августе</span>
+      <h2>Парк из пяти ИИ-агентов</h2>
+      <p class="lead text">Курс оплатил руководитель, проходили его вдвоём. Сборку, настройку и ежедневную работу с агентами вела я, идеи агентов тоже мои. К защите было четыре агента, пятого собрала после. Агенты работают в Telegram 24/7 на сервере, на базе Claude Code.</p>
+    </div>
+
+    <blockquote>
+      <p>«Курс проходили вместе с моим бизнес-ассистентом Кристиной — она вела практическую сборку и ежедневную работу с агентами».</p>
+      <cite>Из текста защиты проекта от лица руководителя, август 2026</cite>
+    </blockquote>
+
+    <div class="agents">
+      <div class="agent"><span class="label">Операционка</span><h3>Помощница</h3><p>Задачи, напоминания, учёт, черновики сообщений. Работает в приватном Telegram-канале.</p></div>
+      <div class="agent"><span class="label">Маркетинг</span><h3>Маркетолог</h3><p>Рынок, конкуренты, позиционирование. Работал на базе моего анализа 94 каналов конкурентов, сам нашёл новый запрет в законе о рекламе.</p></div>
+      <div class="agent"><span class="label">Здоровье</span><h3>Агент по здоровью</h3><p>Снимает анализы с фото, следит за динамикой показателей, готовит вопросы к врачу.</p></div>
+      <div class="agent"><span class="label">Инженерия</span><h3>Инженер парка</h3><p>Собирает новых агентов, пишет им навыки, держит их живыми. Управляю им через консоль.</p></div>
+      <div class="agent"><span class="label">После защиты</span><h3>Личный агент руководителя</h3><p>Написала инструкцию, память и навыки, заложила приватность от ассистента. Руководитель пользуется им сама.</p></div>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><b>5</b><span>агентов работают 24/7</span></div>
+      <div class="fact"><b>327</b><span>записей учёта занесено и посчитано к защите</span></div>
+      <div class="fact"><b>1</b><span>ошибка в медицинских данных поймана перекрёстной проверкой агентов</span></div>
+    </div>
+
+    <div class="case-head">
+      <h3>Приложение по здоровью</h3>
+      <p class="text note">Прототип мини-приложения в Telegram с заделом под полноценное приложение. Продуктовые решения и визуал — мои. Здесь демонстрационные данные.</p>
+    </div>
+    <div class="gallery phones">
+      <figure><img src="img/health-today.jpg" alt="Экран «Сегодня»: индекс готовности и колесо баланса" loading="lazy"><figcaption>«Сегодня»: готовность и колесо баланса</figcaption></figure>
+      <figure><img src="img/health-food.jpg" alt="Экран «Питание»: окно приёма пищи и БЖУ" loading="lazy"><figcaption>«Питание»: фото тарелки, агент считает БЖУ</figcaption></figure>
+    </div>
+
+    <div class="cols">
+      <div class="text">
+        <span class="label">Дашборды</span>
+        <ul class="list">
+          <li>Дашборд задач и напоминаний для себя</li>
+          <li>Дашборд учёта торговых счетов для руководителя: данные из Notion, обновляется сам</li>
+          <li>Публикация на GitHub Pages</li>
+        </ul>
+      </div>
+      <div class="text">
+        <span class="label">Из чего собрано</span>
+        <ul class="list">
+          <li>Claude Code и Linux-сервер, агенты живут 24/7</li>
+          <li>Notion API: у каждого агента своя изолированная база</li>
+          <li>Telegram Bot API, GitHub Pages</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery wide">
+      <figure><img src="img/lenny-tools.jpg" alt="Страница инженера парка: инструменты и технологии" loading="lazy"><figcaption>Инструменты, из которых собран парк</figcaption></figure>
+      <figure><img src="img/lenny-lessons.jpg" alt="Страница «Уроки-грабли» и уроки по сборке агентов" loading="lazy"><figcaption>Уроки, вынесенные из сборки</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- КЕЙС: ПОДРЯДЧИКИ И РЫНОК -->
+  <section class="case" id="market">
+    <div class="case-head">
+      <span class="meta">Ноябрь 2025 — октябрь 2026 · все проекты инвестора</span>
+      <h2>Подрядчики и анализ рынка за год</h2>
+      <p class="lead text">Искала исполнителей под все направления: медтех, ремонт, сайт и CRM, маркетинг, юристы, продюсеры. Сама вела переписку и созвоны, сравнивала предложения, после старта держала связь и проверяла работу.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>~100</b><span>подрядчиков прошли через отбор</span></div>
+      <div class="fact"><b>15</b><span>из них начали работать с нами</span></div>
+      <div class="fact"><b>~100</b><span>конкурентов разобрано: механики, путь клиента, запуск</span></div>
+    </div>
+  </section>
+
+  <!-- КЕЙС: NAVIDUU -->
+  <section class="case" id="naviduu">
+    <div class="case-head">
+      <span class="meta">Март 2023 — октябрь 2025 · студия видеомаркетинга и продюсирования YouTube-каналов</span>
+      <h2>NAVIDUU: лидогенерация, подбор людей и ИИ в работе студии</h2>
+      <p class="lead text">Работала напрямую с руководителем студии. Начинала контент-ассистентом, затем вела рассылки с аналитикой воронки, подбор и ввод новых сотрудников, внедрение ИИ-инструментов, сайты и обучающие курсы.</p>
+    </div>
+
+    <div class="case-head">
+      <h3>Воронка рассылки за август 2025</h3>
+      <p class="text note">Статистику по каждому каналу собирала сама. Тексты сравнивала на группах по 100 человек, каналы без записей было видно сразу.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>2 391</b><span>сообщение отправлено</span></div>
+      <div class="fact"><b>448</b><span>ответили, 19%</span></div>
+      <div class="fact"><b>28</b><span>записались на встречу</span></div>
+      <div class="fact"><b>10</b><span>целевых встреч</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="text">
+        <span class="label">Подбор и команда</span>
+        <ul class="list">
+          <li>Подбор по 9 ролям: контент-ассистенты, режиссёр монтажа, видеооператор, YouTube-маркетолог, SMM-менеджер, продюсер запусков, дизайнеры, таргетолог</li>
+          <li>Вакансии на 4 площадках, отбор анкет, регламент и тестовое, первичные собеседования</li>
+          <li>Инструкция по вводу в должность и чек-листы для новичков; ввела 2 контент-ассистентов, оба работали на проектах</li>
+          <li>50+ инструкций и регламентов для команды</li>
+        </ul>
+      </div>
+      <div class="text">
+        <span class="label">ИИ и автоматизация</span>
+        <ul class="list">
+          <li>Протестировала 30+ ИИ-сервисов и по каждому дала вывод: брать в работу или нет</li>
+          <li>Общий документ по ИИ и около 20 видеоинструкций: темы, заголовки, тайм-коды, субтитры, ИИ-аватары, перевод видео на английский</li>
+          <li>Нарезка шортсов через ИИ со своим стилем субтитров студии</li>
+        </ul>
+      </div>
+      <div class="text">
+        <span class="label">Сайты, курсы, продвижение</span>
+        <ul class="list">
+          <li>4 лендинга на Tilda и 2 обучающих курса на платформе AXL</li>
+          <li>Перенос видео студии с YouTube в VK в 6 этапов, включая 7+ страниц сайта</li>
+          <li>Базы для рассылок почти на 10 000 контактов, 50 конференций для выступлений руководителя, 90 каналов для совместных эфиров</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text">
+      <span class="label">Лендинги, которые собрала и которые работают сейчас</span>
+      <ul class="list">
+        <li><a href="https://naviduu.com/shorts" target="_blank" rel="noopener">Марафон «Месяц на виду»</a> — апрель 2024</li>
+        <li><a href="https://naviduu.com/sessionyt" target="_blank" rel="noopener">Стратегическая сессия по YouTube с анкетой</a> — сентябрь 2024</li>
+      </ul>
+      <p class="note">Страницы собирала я, после ухода их ведёт студия, поэтому часть текстов могла измениться.</p>
+    </div>
+  </section>
+
+  <!-- КЕЙС: МОНТАЖ -->
+  <section class="case" id="video">
+    <div class="case-head">
+      <span class="meta">2023 — 2025 · NAVIDUU и личный бренд эксперта</span>
+      <h2>Монтаж и контент</h2>
+      <p class="lead text">4 длинных видео и 12–20 шортсов в месяц на проект, по 3–5 проектов одновременно без срывов. Все творческие решения по монтажу принимала сама: графика, звук, вставки, цвет.</p>
+    </div>
+    <div class="cols">
+      <div class="text">
+        <span class="label">Длинные видео</span>
+        <ul class="list">
+          <li><a href="https://youtu.be/4R6RNsCSoak" target="_blank" rel="noopener">Николай Писаренко, видео 1</a></li>
+          <li><a href="https://youtu.be/_2xBV9TKAVw" target="_blank" rel="noopener">Николай Писаренко, видео 2</a></li>
+          <li><a href="https://youtu.be/ocRsV4LzE40" target="_blank" rel="noopener">Александр Гор</a></li>
+        </ul>
+      </div>
+      <div class="text">
+        <span class="label">Шортсы</span>
+        <ul class="list">
+          <li><a href="https://www.youtube.com/shorts/HFwGT4dgx3o" target="_blank" rel="noopener">Николай Писаренко</a></li>
+          <li><a href="https://youtube.com/shorts/OvuyAD1r50g" target="_blank" rel="noopener">Натали Леру</a></li>
+          <li><a href="https://youtube.com/shorts/AN3_SXVyrt4" target="_blank" rel="noopener">NAVIDUU</a></li>
+          <li><a href="https://youtube.com/shorts/ilb43joLw3I" target="_blank" rel="noopener">Лариса Беленкова</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="label">Связаться</span>
+    <p>Telegram: @KristinaStb</p>
+  </footer>
+</div>
+</body>
+</html>
