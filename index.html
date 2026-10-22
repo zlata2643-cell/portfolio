@@ -46,7 +46,7 @@ header.top > *{position:relative; z-index:1}
 header.top > .swirl{position:absolute; right:-10px; top:16px; width:min(46%,420px); height:auto; z-index:0; color:var(--muted); opacity:.5; pointer-events:none}
 header.top{grid-template-columns:minmax(0,1fr) auto; column-gap:32px}
 header.top > :not(.avatar):not(.swirl){grid-column:1}
-.avatar{grid-column:2; grid-row:1 / span 4; align-self:center; width:clamp(150px,22vw,240px); height:auto; aspect-ratio:1; object-fit:cover; border-radius:32px; border:1.5px solid var(--ink); box-shadow:8px 8px 0 var(--lime)}
+.avatar{grid-column:2; grid-row:1 / span 4; align-self:center; margin-right:clamp(0px,7vw,96px); width:clamp(170px,27vw,310px); height:auto; aspect-ratio:1; object-fit:cover; border-radius:32px; border:1.5px solid var(--ink); box-shadow:8px 8px 0 var(--lime)}
 @media (max-width:640px){ header.top{grid-template-columns:1fr} .avatar{grid-column:1; grid-row:1; width:130px; border-radius:24px} }
 .role{font-size:1.15rem; color:var(--muted); max-width:52ch}
 .contacts{display:flex; flex-wrap:wrap; gap:8px 10px; font-family:var(--f-mono); font-size:.82rem}
