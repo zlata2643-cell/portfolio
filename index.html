@@ -114,15 +114,17 @@ blockquote cite{display:block; margin-top:8px; font-style:normal; font-size:.85r
 .pills{display:flex; flex-wrap:wrap; gap:6px}
 .pill{font-size:.85rem; text-decoration:none; padding:5px 14px; border:1.5px solid var(--ink); border-radius:999px; color:var(--ink)}
 .pill:hover{background:var(--lime); color:var(--on-lime)}
-.reviews{display:grid; gap:16px}
-.review{background:var(--inset); border-radius:24px; padding:18px; display:grid; gap:24px; grid-template-columns:minmax(0,280px) minmax(0,1fr); align-items:start}
-.review-video{width:100%; max-width:100%; aspect-ratio:9/16; border-radius:16px; background:var(--ink); display:block}
-.review-cover{display:block; width:100%; max-width:100%; height:auto; border-radius:16px; border:1px solid var(--line)}
-.review-text{display:grid; gap:10px; min-width:0; align-content:start}
-.review-text blockquote{padding:12px 16px; border-radius:16px; background:var(--surface)}
-.review-text blockquote p{font-size:1rem}
+.reviews{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:16px; align-items:stretch}
+.review{background:var(--inset); border-radius:24px; padding:18px; display:grid; gap:14px 18px; grid-template-columns:minmax(0,200px) minmax(0,1fr); align-content:start; align-items:start}
+.review-media{grid-column:1; grid-row:1; display:block; width:100%; max-width:100%; border-radius:16px}
+.review-video{aspect-ratio:9/16; background:var(--ink)}
+.review-cover{height:auto; border:1px solid var(--line)}
+.review-who{grid-column:2; grid-row:1; display:grid; gap:6px; align-content:start; min-width:0}
+.review-body{grid-column:1 / -1; display:grid; gap:10px; min-width:0}
+.review-body blockquote{padding:12px 16px; border-radius:16px; background:var(--surface)}
+.review-body blockquote p{font-size:1rem}
 .review audio{width:100%; max-width:100%}
-@media (max-width:700px){ .review{grid-template-columns:1fr} .review-video{max-width:300px; justify-self:center} }
+@media (max-width:520px){ .review{grid-template-columns:1fr} .review-who{grid-column:1; grid-row:auto} .review-video{max-width:260px; justify-self:center} }
 footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
@@ -162,26 +164,30 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
     </div>
     <div class="reviews">
       <div class="review">
-        <video class="review-video" controls preload="metadata" playsinline poster="media/review-naviduu-poster.jpg">
-          <source src="media/review-naviduu.mp4" type="video/mp4">
-        </video>
-        <div class="review-text">
-          <h3>Михаил Салаев, основатель студии NAVIDUU</h3>
-          <p class="note">Работали вместе с 2023 по 2025 год</p>
-          <blockquote><p>«Она, собственно, моя правая рука… такой мастер вообще на все руки».</p></blockquote>
-          <blockquote><p>«Все процессы она теперь знает у нас… можно на неё реально положиться».</p></blockquote>
-          <blockquote><p>«И с SMM, и с различными бизнес-процессами, с организационными моментами… навыков сейчас прям очень-очень много. Рекомендую».</p></blockquote>
-        </div>
-      </div>
-      <div class="review">
-        <img class="review-cover" src="img/land-hero.webp" alt="Первый экран лендинга «Персональная архитектура капитала» с фото Екатерины Карпекиной" width="1573" height="819">
-        <div class="review-text">
+        <img class="review-media review-cover" src="img/land-hero.webp" alt="Первый экран лендинга «Персональная архитектура капитала» с фото Екатерины Карпекиной" width="1573" height="819">
+        <div class="review-who">
           <h3>Екатерина Карпекина, частный инвестор</h3>
           <p class="note">Работали вместе с ноября 2025 по октябрь 2026</p>
+        </div>
+        <div class="review-body">
           <audio controls preload="metadata"><source src="media/review-investor.m4a" type="audio/mp4"></audio>
           <blockquote><p>«Умеет работать в режиме многозадачности».</p></blockquote>
           <blockquote><p>«Находила нужных людей, проводила первые собеседования».</p></blockquote>
           <blockquote><p>«Пунктуальная, ответственная, инициативная, включённая в процесс, предлагает решения, участвует в оптимизации процессов».</p></blockquote>
+        </div>
+      </div>
+      <div class="review">
+        <video class="review-media review-video" controls preload="metadata" playsinline poster="media/review-naviduu-poster.jpg">
+          <source src="media/review-naviduu.mp4" type="video/mp4">
+        </video>
+        <div class="review-who">
+          <h3>Михаил Салаев, основатель студии NAVIDUU</h3>
+          <p class="note">Работали вместе с 2023 по 2025 год</p>
+        </div>
+        <div class="review-body">
+          <blockquote><p>«Она, собственно, моя правая рука… такой мастер вообще на все руки».</p></blockquote>
+          <blockquote><p>«Все процессы она теперь знает у нас… можно на неё реально положиться».</p></blockquote>
+          <blockquote><p>«И с SMM, и с различными бизнес-процессами, с организационными моментами… навыков сейчас прям очень-очень много. Рекомендую».</p></blockquote>
         </div>
       </div>
     </div>
