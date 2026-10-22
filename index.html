@@ -105,6 +105,15 @@ blockquote cite{display:block; margin-top:8px; font-style:normal; font-size:.85r
 .pills{display:flex; flex-wrap:wrap; gap:6px}
 .pill{font-size:.85rem; text-decoration:none; padding:5px 14px; border:1.5px solid var(--ink); border-radius:999px; color:var(--ink)}
 .pill:hover{background:var(--lime); color:var(--on-lime)}
+.reviews{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; align-items:start}
+.review{background:var(--inset); border-radius:24px; padding:16px; display:grid; gap:14px; grid-template-columns:minmax(0,220px) minmax(0,1fr); align-items:start}
+.review:has(> .review-text:only-child){grid-template-columns:1fr}
+.review-video{width:100%; max-width:100%; aspect-ratio:9/16; border-radius:16px; background:var(--ink); display:block}
+.review-text{display:grid; gap:8px; min-width:0; padding:4px}
+.review audio{width:100%; max-width:100%}
+@media (max-width:560px){ .review{grid-template-columns:1fr} .review-video{max-width:320px} }
+.review-text blockquote{padding:12px 16px; border-radius:16px; background:var(--surface)}
+.review-text blockquote p{font-size:1rem}
 footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
@@ -124,6 +133,7 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
   </header>
 
   <nav class="toc" aria-label="Кейсы">
+    <a href="#reviews">Отзывы</a>
     <a href="#nextsim">Медтех-стартап NextSim</a>
     <a href="#landing">Лендинг и бот</a>
     <a href="#renovation">Ремонт под сдачу</a>
@@ -134,6 +144,39 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
     <a href="#docs">Регламенты</a>
     <a href="#video">Тексты и монтаж</a>
   </nav>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="case" id="reviews">
+    <div class="case-head">
+      <h2>Отзывы руководителей</h2>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <video class="review-video" controls preload="metadata" playsinline poster="media/review-naviduu-poster.jpg">
+          <source src="media/review-naviduu.mp4" type="video/mp4">
+        </video>
+        <div class="review-text">
+          <span class="label">Видео · 3:43</span>
+          <h3>Михаил Салаев, основатель студии NAVIDUU</h3>
+          <p class="note">Работали вместе с 2023 по 2025 год</p>
+          <blockquote><p>«Она, собственно, моя правая рука… такой мастер вообще на все руки».</p></blockquote>
+          <blockquote><p>«Все процессы она теперь знает у нас… можно на неё реально положиться».</p></blockquote>
+          <blockquote><p>«И с SMM, и с различными бизнес-процессами, с организационными моментами… навыков сейчас прям очень-очень много. Рекомендую».</p></blockquote>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-text">
+          <span class="label">Аудио · 1:37</span>
+          <h3>Екатерина Карпекина, частный инвестор</h3>
+          <p class="note">Работали вместе с ноября 2025 по октябрь 2026</p>
+          <audio controls preload="metadata"><source src="media/review-investor.m4a" type="audio/mp4"></audio>
+          <blockquote><p>«Умеет работать в режиме многозадачности».</p></blockquote>
+          <blockquote><p>«Находила нужных людей, проводила первые собеседования».</p></blockquote>
+          <blockquote><p>«Пунктуальная, ответственная, инициативная, включённая в процесс, предлагает решения, участвует в оптимизации процессов».</p></blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- КЕЙС 1 -->
   <section class="case" id="nextsim">
