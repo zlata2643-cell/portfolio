@@ -44,6 +44,10 @@ mark{background:var(--lime); color:var(--on-lime); padding:0 .12em; border-radiu
 header.top{position:relative; padding-block:56px 28px; display:grid; gap:18px; overflow:hidden}
 header.top > *{position:relative; z-index:1}
 header.top > .swirl{position:absolute; right:-10px; top:16px; width:min(46%,420px); height:auto; z-index:0; color:var(--muted); opacity:.5; pointer-events:none}
+header.top{grid-template-columns:minmax(0,1fr) auto; column-gap:32px}
+header.top > :not(.avatar):not(.swirl){grid-column:1}
+.avatar{grid-column:2; grid-row:1 / span 4; align-self:center; width:clamp(150px,22vw,240px); height:auto; aspect-ratio:1; object-fit:cover; border-radius:32px; border:1.5px solid var(--ink); box-shadow:8px 8px 0 var(--lime)}
+@media (max-width:640px){ header.top{grid-template-columns:1fr} .avatar{grid-column:1; grid-row:1; width:130px; border-radius:24px} }
 .role{font-size:1.15rem; color:var(--muted); max-width:52ch}
 .contacts{display:flex; flex-wrap:wrap; gap:8px 10px; font-family:var(--f-mono); font-size:.82rem}
 .contacts span{padding:6px 12px; border-radius:999px; background:var(--surface); border:1px solid var(--line)}
@@ -125,6 +129,7 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
     <svg class="swirl" viewBox="0 0 420 260" fill="none" aria-hidden="true"><path d="M10 40 C 120 10, 210 60, 190 120 C 175 165, 110 170, 105 130 C 100 90, 170 80, 230 110 C 300 145, 330 200, 410 240" stroke="currentColor" stroke-width="2" stroke-dasharray="7 7" stroke-linecap="round"/></svg>
     <span class="label">Портфолио · 2023 — 2026</span>
     <h1><mark>Кристина</mark> Павлова</h1>
+    <img class="avatar" src="img/kristina.webp" alt="Кристина Павлова" width="600" height="600">
     <p class="role">Бизнес-ассистент руководителя, 3,5 года опыта. Аналитика, подрядчики, запуск продуктов, подбор людей, ИИ-агенты и вайбкодинг.</p>
     <div class="contacts">
       <span>Анталья, UTC+3 · удалённо</span>
