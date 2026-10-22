@@ -100,6 +100,11 @@ blockquote cite{display:block; margin-top:8px; font-style:normal; font-size:.85r
 .btn:hover{background:var(--lime); box-shadow:4px 4px 0 var(--ink)}
 .pending{display:inline-block; font-family:var(--f-mono); font-size:.8rem; padding:4px 10px; border:1px dashed var(--line); border-radius:999px; color:var(--muted)}
 
+.works{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px}
+.work{background:var(--inset); border-radius:22px; padding:18px 20px; display:grid; gap:8px; align-content:start; min-width:0}
+.pills{display:flex; flex-wrap:wrap; gap:6px}
+.pill{font-size:.85rem; text-decoration:none; padding:5px 14px; border:1.5px solid var(--ink); border-radius:999px; color:var(--ink)}
+.pill:hover{background:var(--lime); color:var(--on-lime)}
 footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
@@ -126,7 +131,7 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
     <a href="#office">Офис ИИ-специалистов</a>
     <a href="#market">Подрядчики и рынок</a>
     <a href="#naviduu">Студия NAVIDUU</a>
-    <a href="#video">Монтаж</a>
+    <a href="#video">Тексты и монтаж</a>
   </nav>
 
   <!-- КЕЙС 1 -->
@@ -434,31 +439,29 @@ footer{padding-block:28px; display:grid; gap:12px; justify-items:start}
     </div>
   </section>
 
-  <!-- КЕЙС: МОНТАЖ -->
+  <!-- КЕЙС: КОНТЕНТ -->
   <section class="case" id="video">
     <div class="case-head">
-      <span class="meta">2023 — 2025 · NAVIDUU и личный бренд эксперта</span>
-      <h2>Монтаж и контент</h2>
-      <p class="lead text">4 длинных видео и 12–20 шортсов в месяц на проект, по 3–5 проектов одновременно без срывов. Все творческие решения по монтажу принимала сама: графика, звук, вставки, цвет.</p>
+      <span class="meta">2023 — 2025 · NAVIDUU, клиенты студии и личный бренд эксперта</span>
+      <h2>Тексты и монтаж</h2>
+      <p class="lead text">Посты, статьи и монтаж для экспертов и студии. 4 длинных видео и 12–20 шортсов в месяц на проект, по 3–5 проектов одновременно без срывов. Все творческие решения по монтажу принимала сама: графика, звук, вставки, цвет.</p>
     </div>
-    <div class="cols">
-      <div class="text">
-        <span class="label">Длинные видео</span>
-        <ul class="list">
-          <li><a href="https://youtu.be/4R6RNsCSoak" target="_blank" rel="noopener">Николай Писаренко, видео 1</a></li>
-          <li><a href="https://youtu.be/_2xBV9TKAVw" target="_blank" rel="noopener">Николай Писаренко, видео 2</a></li>
-          <li><a href="https://youtu.be/ocRsV4LzE40" target="_blank" rel="noopener">Александр Гор</a></li>
-        </ul>
-      </div>
-      <div class="text">
-        <span class="label">Шортсы</span>
-        <ul class="list">
-          <li><a href="https://www.youtube.com/shorts/HFwGT4dgx3o" target="_blank" rel="noopener">Николай Писаренко</a></li>
-          <li><a href="https://youtube.com/shorts/OvuyAD1r50g" target="_blank" rel="noopener">Натали Леру</a></li>
-          <li><a href="https://youtube.com/shorts/AN3_SXVyrt4" target="_blank" rel="noopener">NAVIDUU</a></li>
-          <li><a href="https://youtube.com/shorts/ilb43joLw3I" target="_blank" rel="noopener">Лариса Беленкова</a></li>
-        </ul>
-      </div>
+
+    <div class="text">
+      <span class="label">Посты и статьи</span>
+      <ul class="list">
+        <li><a href="https://t.me/nklypsernk_zttlkstn/894" target="_blank" rel="noopener">Пост для Николая Писаренко</a></li><li><a href="https://vc.ru/marketing/2080704-prodvizhenie-stroitel-nogo-biznesa-na-youtube" target="_blank" rel="noopener">Статья на vc.ru: продвижение строительного бизнеса на YouTube</a></li><li><a href="https://t.me/malykhina_natalya/740" target="_blank" rel="noopener">Пост для Натальи Малыхиной</a></li><li><a href="https://t.me/naviduu_blog/1125" target="_blank" rel="noopener">Канал NAVIDUU: посты за последние два года работы, 2023 — 2025</a></li><li><a href="https://t.me/Belenkova_image" target="_blank" rel="noopener">Канал Ларисы Беленковой: посты май — ноябрь 2025</a></li>
+      </ul>
+    </div>
+
+    <div class="case-head"><span class="label">Длинные видео</span></div>
+    <div class="works">
+      <div class="work"><h3>Николай Писаренко</h3><span class="note">монтаж, цвет, звук, графика, титры, футажи</span><div class="pills"><a class="pill" href="https://youtu.be/4R6RNsCSoak" target="_blank" rel="noopener">Видео 1</a><a class="pill" href="https://youtu.be/_2xBV9TKAVw" target="_blank" rel="noopener">Видео 2</a></div></div><div class="work"><h3>Марина Дедова</h3><span class="note">монтаж, цвет, звук, графика, титры, футажи</span><div class="pills"><a class="pill" href="https://disk.yandex.ru/i/KCzV13gxW-dQZQ" target="_blank" rel="noopener">Видео 1</a><a class="pill" href="https://disk.yandex.ru/i/v2WS1E_CT7s0wQ" target="_blank" rel="noopener">Видео 2</a><a class="pill" href="https://disk.yandex.ru/i/xVmjkRNRrzK2Gg" target="_blank" rel="noopener">Видео 3</a></div></div><div class="work"><h3>NAVIDUU</h3><span class="note">монтаж, цвет, звук, графика, титры</span><div class="pills"><a class="pill" href="https://disk.yandex.ru/i/vuMRXhZW8m5UvA" target="_blank" rel="noopener">Видео 1</a><a class="pill" href="https://disk.yandex.ru/i/wNP-7CQcrf-saA" target="_blank" rel="noopener">Видео 2</a><a class="pill" href="https://disk.yandex.ru/i/JDe6i8_7BbS2cA" target="_blank" rel="noopener">Видео 3</a></div></div><div class="work"><h3>Александр Гор</h3><span class="note">базовый монтаж, цвет, звук, графика, титры</span><div class="pills"><a class="pill" href="https://youtu.be/ocRsV4LzE40" target="_blank" rel="noopener">Видео 1</a></div></div>
+    </div>
+
+    <div class="case-head"><span class="label">Shorts и Reels</span></div>
+    <div class="works">
+      <div class="work"><h3>Николай Писаренко</h3><div class="pills"><a class="pill" href="https://www.youtube.com/shorts/HFwGT4dgx3o" target="_blank" rel="noopener">1</a><a class="pill" href="https://www.youtube.com/shorts/VTR-W-DStrk" target="_blank" rel="noopener">2</a></div></div><div class="work"><h3>Марина Дедова</h3><div class="pills"><a class="pill" href="https://www.youtube.com/shorts/4LgrcDKAWuA" target="_blank" rel="noopener">1</a></div></div><div class="work"><h3>Вадим Попов</h3><div class="pills"><a class="pill" href="https://www.youtube.com/shorts/Sw_Z1GBlEE8" target="_blank" rel="noopener">1</a></div></div><div class="work"><h3>Натали Леру</h3><div class="pills"><a class="pill" href="https://youtube.com/shorts/OvuyAD1r50g" target="_blank" rel="noopener">1</a><a class="pill" href="https://youtube.com/shorts/ebNDMGjEGMM" target="_blank" rel="noopener">2</a><a class="pill" href="https://youtube.com/shorts/ET8bbSmpUmU" target="_blank" rel="noopener">3</a></div></div><div class="work"><h3>NAVIDUU</h3><div class="pills"><a class="pill" href="https://youtube.com/shorts/AN3_SXVyrt4" target="_blank" rel="noopener">1</a></div></div><div class="work"><h3>Лариса Беленкова</h3><div class="pills"><a class="pill" href="https://youtube.com/shorts/ilb43joLw3I" target="_blank" rel="noopener">1</a></div></div>
     </div>
   </section>
 
